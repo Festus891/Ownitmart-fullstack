@@ -19,10 +19,10 @@ const path = require("path");
 const errorMiddleware = require("./middlewares/errors");
 
 //setting up config file
-// if (process.env.NODE_ENV !== "PRODUCTION") {
-//   dotenv.config({ path: "backend/config/config.env" });
-// }
-dotenv.config({ path: "backend/config/config.env" });
+if (process.env.NODE_ENV !== "PRODUCTION") {
+  dotenv.config({ path: "backend/config/config.env" });
+}
+// dotenv.config({ path: "backend/config/config.env" });
 
 // Example route
 app.get("/", (req, res) => {
@@ -48,13 +48,13 @@ app.use("/api/v1", auth);
 app.use("/api/v1", payment);
 app.use("/api/v1", order);
 
-// if (process.env.NODE_ENV === "PRODUCTION") {
-//   app.use(express.static(path.join(__dirname, "../frontend/build")));
+if (process.env.NODE_ENV === "PRODUCTION") {
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-//   });
-// }
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+  });
+}
 
 // Middleware to handle errors
 app.use(errorMiddleware);
