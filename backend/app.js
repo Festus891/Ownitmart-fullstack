@@ -3,7 +3,6 @@ const app = express();
 const cors = require("cors");
 // module.exports = app;
 const corsOptions = {
-  origin: "https://ownitmart.vercel.app/", // replace with your frontend domain
   credentials: true,
 };
 
