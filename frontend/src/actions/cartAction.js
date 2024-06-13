@@ -1,5 +1,5 @@
 import axios from "axios";
-// import { baseUrl } from "./baseUrl";
+import { apiUrl } from "./baseUrl";
 import { ADD_TO_CART, REMOVE_ITEM_CART } from "../constants/cartConstant";
 
 // Set default options for all requests
@@ -7,7 +7,7 @@ import { ADD_TO_CART, REMOVE_ITEM_CART } from "../constants/cartConstant";
 
 // ADD ITEM TO CART
 export const addItemToCart = (id, quantity) => async (dispatch, getState) => {
-  const { data } = await axios.get(`/api/v1/product/${id}`);
+  const { data } = await axios.get(`${apiUrl}/api/v1/product/${id}`);
 
   dispatch({
     type: ADD_TO_CART,
