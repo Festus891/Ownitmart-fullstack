@@ -50,9 +50,9 @@ export const login = (email, password) => async (dispatch) => {
     dispatch({
       type: LOGIN_REQUEST,
     });
-
     const config = {
       headers: { "Content-Type": "application/json" },
+      withCredentials: true, // Include credentials (cookies)
     };
 
     const { data } = await axios.post(
