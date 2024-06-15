@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 // module.exports = app;
 const corsOptions = {
-  origin: "https://ownitmart-1k00ipa2t-aderibigbe-festuss-projects.vercel.app", // your frontend URL
+  origin: "https://ownitmart-elhp80lwy-aderibigbe-festuss-projects.vercel.app", // your frontend URL
   credentials: true, // This allows cookies to be sent
 };
 app.use(cors(corsOptions));
