@@ -22,9 +22,6 @@ import {
 import axios from "axios";
 import { apiUrl } from "./baseUrl";
 
-// import axiosInstance from "./axiosConfig";
-// import { baseUrl } from "./baseUrl";
-
 // Set default options for all requests
 axios.defaults.withCredentials = true;
 
