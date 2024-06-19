@@ -6,6 +6,7 @@ const cors = require("cors");
 // Define the allowed origins
 const allowedOrigins = [
   "https://ownitmart.vercel.app",
+  "https://ownitmart-fullstack-1.onrender.com",
   "http://localhost:3000",
 ];
 
