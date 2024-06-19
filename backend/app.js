@@ -5,7 +5,7 @@ const cors = require("cors");
 
 // Define the allowed origins
 const allowedOrigins = [
-  "https://ownitmart-elhp80lwy-aderibigbe-festuss-projects.vercel.app",
+  "https://ownitmart.vercel.app",
   "http://localhost:3000",
 ];
 
@@ -24,7 +24,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Handle preflight requests for all routes
-// app.options("*", cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 const cookieParser = require("cookie-parser");
 const bodyparser = require("body-parser");
