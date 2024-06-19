@@ -37,7 +37,10 @@ const Cart = () => {
   return (
     <Fragment>
       <MetaData title={"Your Cart"} />
-      <h3 className="mt-5 bold" style={{ fontWeight: "bold" }}>
+      <h3
+        className="mt-5 ml-1 text-center "
+        style={{ fontWeight: "bold", fontSize: "2rem" }}
+      >
         Shopping Cart
       </h3>
       {cartItems.length === 0 ? (
@@ -73,17 +76,17 @@ const Cart = () => {
         </div>
       ) : (
         <Fragment>
-          <h4 className="mt-5">
+          <h4 className="mt-5 ml-1 " style={{ fontWeight: "bold" }}>
             Cart <b>({cartItems.length})</b>
           </h4>
           <div className="row d-flex justify-content-between">
-            <div className="col-12 col-lg-8">
+            <div className="col-12 col-lg-8 bg-light ml-1">
               {cartItems.map((item) => (
                 <Fragment>
                   <hr />
-                  <div className="cart-item" key={item.product}>
+                  <div className="cart-item " key={item.product}>
                     <div className="d-flex flex-column">
-                      <div className="d-flex flex-row justify-content-start">
+                      <div className="d-flex flex-row justify-content-start ">
                         <div className="mr-2">
                           <img
                             src={item.image}
@@ -93,7 +96,10 @@ const Cart = () => {
                           />
                         </div>
                         <div className="">
-                          <Link to={`/product/${item.product}`}>
+                          <Link
+                            to={`/product/${item.product}`}
+                            style={{ color: "black" }}
+                          >
                             {item.name}
                           </Link>
                           <p id="card_item_price">${item.price}</p>
@@ -148,7 +154,7 @@ const Cart = () => {
               ))}
             </div>
 
-            <div className="col-12 col-lg-3 my-4">
+            <div className="col-12 col-lg-3 my-4 ">
               <div id="order_summary">
                 <h4>Order Summary</h4>
                 <hr style={{ border: "0.1rem solid #f38f0b" }} />

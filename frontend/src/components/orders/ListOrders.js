@@ -4,9 +4,9 @@ import { useAlert } from "react-alert";
 import { Link } from "react-router-dom";
 import { MDBDataTable } from "mdbreact";
 import Loader from "../layouts/Loader";
-
 import { useDispatch, useSelector } from "react-redux";
 import { myOrders, clearErrors } from "../../actions/orderAction";
+import "../../App.css";
 
 const ListOrders = () => {
   const alert = useAlert();
@@ -30,33 +30,54 @@ const ListOrders = () => {
           label: "Order ID",
           field: "id",
           sort: "asc",
+          width: 150,
+          color: "white",
+        },
+        {
+          label: "Name of Items",
+          field: "nameOfItems",
+          sort: "asc",
+          width: 150,
+          color: "white",
         },
         {
           label: "Num of Items",
           field: "numOfItems",
           sort: "asc",
+          width: 270,
         },
         {
           label: "Amount",
           field: "amount",
           sort: "asc",
+          width: 200,
         },
         {
           label: "Status",
           field: "status",
           sort: "asc",
+          width: 100,
         },
         {
           label: "Actions",
           field: "actions",
           sort: "asc",
+          width: 150,
         },
       ],
       rows: [],
     };
     orders.forEach((order) => {
       data.rows.push({
-        id: order._id,
+        id: (
+          <Link
+            to={`/order/${order._id}`}
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            {order._id}
+          </Link>
+        ),
+        nameOfItems: order.orderItems.map((item) => item.name).join(", "),
         numOfItems: order.orderItems.length,
         amount: `$${order.totalPrice}`,
         status:
@@ -79,18 +100,24 @@ const ListOrders = () => {
   return (
     <Fragment>
       <MetaData title={"My Orders"} />
-      <h1 className="mt-5">My Orders</h1>
+      <h1 className="mt-5 text-center" style={{ fontWeight: "bold" }}>
+        My Orders
+      </h1>
 
       {loading ? (
         <Loader />
       ) : (
-        <MDBDataTable
-          data={setOrders()}
-          className="px-3"
-          bordered
-          striped
-          hover
-        />
+        <div className="table-responsive">
+          <MDBDataTable
+            data={setOrders()}
+            style={{ color: "white", fontSize: "0.8rem" }}
+            className="px-5 pt-5"
+            bordered
+            striped
+            responsive
+            classNameResponsive="table-responsive"
+          />
+        </div>
       )}
     </Fragment>
   );

@@ -2,11 +2,29 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 // module.exports = app;
+
+// Define the allowed origins
+const allowedOrigins = [
+  "https://ownitmart-elhp80lwy-aderibigbe-festuss-projects.vercel.app",
+  "http://localhost:3000",
+];
+
 const corsOptions = {
-  origin: "https://ownitmart-elhp80lwy-aderibigbe-festuss-projects.vercel.app", // your frontend URL
-  credentials: true, // This allows cookies to be sent
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+
+  credentials: true, // Allow cookies and authentication headers
 };
+
 app.use(cors(corsOptions));
+
+// Handle preflight requests for all routes
+// app.options("*", cors(corsOptions));
 
 const cookieParser = require("cookie-parser");
 const bodyparser = require("body-parser");

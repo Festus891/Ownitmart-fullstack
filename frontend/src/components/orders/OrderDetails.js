@@ -49,33 +49,53 @@ const OrderDetails = () => {
         <Loader />
       ) : (
         <Fragment>
-          <div className="row d-flex justify-content-between">
-            <div className="col-12 col-lg-8 mt-5 order-details">
-              <h1 className="my-5">Order #{order._id}</h1>
+          <div className="row d-flex justify-content-between bg-dark ">
+            <div className="col-12 col-lg-8 mt-1 order-details">
+              <h4
+                className="my-5"
+                style={{ fontWeight: "bold", color: "#fff" }}
+              >
+                Order #{order._id}
+              </h4>
 
-              <h4 className="mb-4">Shipping Info</h4>
-              <p>
+              <h4
+                className="mb-4"
+                style={{ fontWeight: "bold", color: "#fff" }}
+              >
+                Shipping Info
+              </h4>
+              <p style={{ color: "#fff" }}>
                 <b>Name:</b> {user && user.name}
               </p>
-              <p>
+              <p style={{ color: "#fff" }}>
                 <b>Phone:</b> {shippingInfo && shippingInfo.phoneNo}
               </p>
-              <p className="mb-4">
+              <p className="mb-4" style={{ color: "#fff" }}>
                 <b>Address:</b>
                 {shippingDetails}
               </p>
-              <p>
+              <p style={{ color: "#fff" }}>
                 <b>Amount:</b> ${totalPrice}
               </p>
 
-              <hr />
+              <hr style={{ border: "2px solid #fff" }} />
 
-              <h4 className="my-4">Payment</h4>
+              <h4
+                className="my-4"
+                style={{ fontWeight: "bold", color: "#fff" }}
+              >
+                Payment:
+              </h4>
               <p className={isPaid ? "greenColor" : "redColor"}>
-                <b>{isPaid ? "PAID" : "NOT PAID"} </b>
+                {isPaid ? "PAID" : "NOT PAID"}
               </p>
 
-              <h4 className="my-4">Order Status:</h4>
+              <h4
+                className="my-4"
+                style={{ fontWeight: "bold", color: "#fff" }}
+              >
+                Order Status:
+              </h4>
               <p
                 className={
                   order.orderStatus &&
@@ -86,33 +106,51 @@ const OrderDetails = () => {
               >
                 <b>{orderStatus}</b>
               </p>
+              <hr style={{ border: "2px solid #fff" }} />
+              <h4
+                className="my-4"
+                style={{ fontWeight: "bold", color: "#fff" }}
+              >
+                Order Items:
+              </h4>
 
-              <h4 className="my-4">Order Items:</h4>
-
-              <hr />
-              <div className="cart-item my-1">
+              <hr style={{ border: "1px solid #fa9c23" }} />
+              <div className="cart-item my-1 ">
                 {orderItems &&
                   orderItems.map((item) => (
                     <div className="row my-5" key={item.product}>
-                      <div className="col-4 col-lg-2">
+                      <div className="col-12 col-md-2 text-center mb-3 mb-md-0">
                         <img
                           src={item.image}
                           alt={item.name}
-                          height="45"
-                          width="65"
+                          className="img-fluid"
+                          style={{ maxHeight: "65px" }}
                         />
                       </div>
 
-                      <div className="col-5 col-lg-5">
-                        <Link to={`/product/${item.product}`}>{item.name}</Link>
+                      <div className="col-12 col-md-5 text-center text-md-left mb-3 mb-md-0">
+                        <Link
+                          to={`/product/${item.product}`}
+                          style={{ fontWeight: "bold", color: "#fff" }}
+                        >
+                          {item.name}
+                        </Link>
                       </div>
 
-                      <div className="col-4 col-lg-2 mt-4 mt-lg-0">
-                        <p>${item.price}</p>
+                      <div className="col-6 col-md-2 text-center mb-3 mb-md-0">
+                        <p style={{ fontWeight: "bold", color: "#fff" }}>
+                          ${item.price}
+                        </p>
                       </div>
 
-                      <div className="col-4 col-lg-3 mt-4 mt-lg-0">
-                        <p>{item.quantity} piece(s)</p>
+                      <div className="col-6 col-md-3 text-center text-md-left">
+                        <p style={{ fontWeight: "bold", color: "#fff" }}>
+                          {item.quantity} piece(s)
+                        </p>
+                      </div>
+
+                      <div className="col-12">
+                        <hr style={{ border: "1px solid #fa9c23" }} />
                       </div>
                     </div>
                   ))}

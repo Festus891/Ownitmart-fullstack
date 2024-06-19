@@ -32,15 +32,18 @@ const Shipping = () => {
 
       <CheckOutSteps shipping />
       <div className="row wrapper">
-        <div className="col-10 col-lg-5">
+        <div
+          className="col-10 col-lg-5"
+          style={{ backgroundColor: "rgba(33, 37, 41, 1)" }}
+        >
           <form className="shadow-lg" onSubmit={submitHandler}>
-            <h1 className="mb-4">Shipping Info</h1>
+            <h1 className="mb-4 font-weight-bold text-center">Shipping Info</h1>
             <div className="form-group">
               <label for="address_field">Address</label>
               <input
                 type="text"
                 id="address_field"
-                className="form-control"
+                className="form-control font-weight-bold"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
                 required
@@ -52,7 +55,7 @@ const Shipping = () => {
               <input
                 type="text"
                 id="city_field"
-                className="form-control"
+                className="form-control font-weight-bold"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 required
@@ -64,7 +67,7 @@ const Shipping = () => {
               <input
                 type="phone"
                 id="phone_field"
-                className="form-control"
+                className="form-control font-weight-bold"
                 value={phoneNo}
                 onChange={(e) => setPhoneNo(e.target.value)}
                 required
@@ -76,7 +79,7 @@ const Shipping = () => {
               <input
                 type="number"
                 id="postal_code_field"
-                className="form-control"
+                className="form-control font-weight-bold"
                 value={postalCode}
                 onChange={(e) => setPostalCode(e.target.value)}
                 required
@@ -87,7 +90,7 @@ const Shipping = () => {
               <label for="country_field">Country</label>
               <select
                 id="country_field"
-                className="form-control"
+                className="form-control font-weight-bold"
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
                 required
@@ -103,7 +106,7 @@ const Shipping = () => {
             <button
               id="shipping_btn"
               type="submit"
-              className="btn btn-block py-3"
+              className="btn btn-block py-3 font-weight-bold"
             >
               CONTINUE
             </button>

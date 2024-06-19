@@ -64,85 +64,79 @@ const ProductMapping = ({ title }) => {
           <h2 id="products_heading">{title}</h2>
           <section id="products" className="container mt-2">
             <div className="row">
-              {keyword ? (
-                <Fragment>
-                  <div className="col-6 col-md-3 mt-5 mb-5">
-                    <div className="px-5">
-                      {" "}
-                      <Range
-                        marks={{ 1: `$1`, 1000: `$1000` }}
-                        min={1}
-                        max={1000}
-                        defaulValue={[1, 1000]}
-                        tipFormatter={(value) => `$${value}`}
-                        tipProps={{
-                          placement: "top",
-                          visible: true,
-                        }}
-                        value={price}
-                        onChange={(price) => setPrice(price)}
-                      />
-                      <hr className="my-5" />
-                      <div className="mt-5">
-                        <h4 className="mb-3"> categories </h4>
-
-                        <ul className="pl-0">
-                          {categories.map((category) => (
-                            <li
-                              style={{ cursor: "pointer ", listStyle: "none" }}
-                              key={category}
-                              onClick={() => setCategory(category)}
-                            >
-                              {category}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <hr className="my-3" />
-                      <div className="mt-5">
-                        <h4 className="mb-3"> Ratings </h4>
-
-                        <ul className="pl-0">
-                          {[5, 4, 3, 2, 1].map((star) => (
-                            <li
-                              style={{ cursor: "pointer ", listStyle: "none" }}
-                              key={star}
-                              onClick={() => setRating(star)}
-                            >
-                              <div className="rating-outer">
-                                <div
-                                  className="rating-inner"
-                                  style={{ width: `${star * 20}%` }}
-                                ></div>
-                              </div>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="col-6 col-md-9">
-                    <div className="row">
-                      {products &&
-                        products.map((product) => (
-                          <Product
-                            key={product._id}
-                            product={product}
-                            col={4}
-                          />
+              {/* Filters Section - Only shown when there's a keyword */}
+              {keyword && (
+                <div className="col-md-3">
+                  <div className="px-5">
+                    <Range
+                      marks={{ 1: `$1`, 1000: `$1000` }}
+                      min={1}
+                      max={1000}
+                      defaultValue={[1, 1000]}
+                      tipFormatter={(value) => `$${value}`}
+                      tipProps={{
+                        placement: "top",
+                        visible: true,
+                      }}
+                      value={price}
+                      onChange={(price) => setPrice(price)}
+                    />
+                    <hr className="my-5" />
+                    <div className="mt-5">
+                      <h4 className="mb-3">Categories</h4>
+                      <ul className="pl-0">
+                        {categories.map((category) => (
+                          <li
+                            style={{ cursor: "pointer", listStyle: "none" }}
+                            key={category}
+                            onClick={() => setCategory(category)}
+                          >
+                            {category}
+                          </li>
                         ))}
+                      </ul>
+                    </div>
+                    <hr className="my-3" />
+                    <div className="mt-5">
+                      <h4 className="mb-3">Ratings</h4>
+                      <ul className="pl-0">
+                        {[5, 4, 3, 2, 1].map((star) => (
+                          <li
+                            style={{ cursor: "pointer", listStyle: "none" }}
+                            key={star}
+                            onClick={() => setRating(star)}
+                          >
+                            <div className="rating-outer">
+                              <div
+                                className="rating-inner"
+                                style={{ width: `${star * 20}%` }}
+                              ></div>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
-                </Fragment>
-              ) : (
-                products &&
-                products.map((product) => (
-                  <Product key={product._id} product={product} col={3} />
-                ))
+                </div>
               )}
+
+              {/* Products Section */}
+              <div className={keyword ? "col-md-9" : "col-12"}>
+                <div className="row">
+                  {products &&
+                    products.map((product) => (
+                      <Product
+                        key={product._id}
+                        product={product}
+                        col={keyword ? 4 : 3}
+                      />
+                    ))}
+                </div>
+              </div>
             </div>
           </section>
+
+          {/* Pagination Section */}
           {resPerPage <= productCount && (
             <div className="d-flex justify-content-center mt-5">
               <Pagination

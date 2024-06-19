@@ -43,10 +43,7 @@ const CategoryPage = () => {
           <h2 id="products_heading">{category} Products</h2>
           <section id="products" className="container mt-2">
             <div className="row">
-              <div className="col-6 col-md-3 mt-5 mb-5">
-                {/* Add any additional filters if needed */}
-              </div>
-              <div className="col-6 col-md-9">
+              <div className="col-12">
                 <div className="row">
                   {products &&
                     products.map((product) => (

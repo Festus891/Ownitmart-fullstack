@@ -10,6 +10,10 @@ const options = {
   timeout: 5000,
   positions: positions.BOTTOM_CENTER,
   transitions: transitions.SCALE,
+  containerStyle: {
+    zIndex: 3000,
+    borderRadius: "8px", // Custom border radius
+  },
 };
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -101,20 +101,25 @@ const NewProduct = () => {
 
         <div className="col-12 col-md-10">
           <Fragment>
-            <div className="wrapper my-5">
+            <div
+              className="wrapper my-5"
+              style={{
+                backgroundColor: "rgba(33, 37, 41, 1)",
+              }}
+            >
               <form
                 className="shadow-lg"
                 encType="multipart/form-data"
                 onSubmit={submitHandler}
               >
-                <h1 className="mb-4">New Product</h1>
+                <h1 className="mb-4 font-weight-bold">New Product</h1>
 
                 <div className="form-group">
                   <label htmlFor="name_field">Name</label>
                   <input
                     type="text"
                     id="name_field"
-                    className="form-control"
+                    className="form-control font-weight-bold"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
@@ -125,7 +130,7 @@ const NewProduct = () => {
                   <input
                     type="text"
                     id="price_field"
-                    className="form-control"
+                    className="form-control font-weight-bold"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                   />
@@ -134,7 +139,7 @@ const NewProduct = () => {
                 <div className="form-group">
                   <label htmlFor="description_field">Description</label>
                   <textarea
-                    className="form-control"
+                    className="form-control font-weight-bold"
                     id="description_field"
                     rows="8"
                     value={description}
@@ -145,11 +150,14 @@ const NewProduct = () => {
                 <div className="form-group">
                   <label htmlFor="category_field">Category</label>
                   <select
-                    className="form-control"
+                    className="form-control font-weight-bold"
                     id="category_field"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
                   >
+                    <option value="" disabled>
+                      Select Category
+                    </option>
                     {categories.map((category) => (
                       <option key={category} value={category}>
                         {category}
@@ -157,12 +165,12 @@ const NewProduct = () => {
                     ))}
                   </select>
                 </div>
-                <div className="form-group">
+                <div className="form-group font-weight-bold">
                   <label htmlFor="stock_field">Stock</label>
                   <input
                     type="number"
                     id="stock_field"
-                    className="form-control"
+                    className="form-control font-weight-bold"
                     value={stock}
                     onChange={(e) => setStock(e.target.value)}
                   />
@@ -173,7 +181,7 @@ const NewProduct = () => {
                   <input
                     type="text"
                     id="seller_field"
-                    className="form-control"
+                    className="form-control font-weight-bold"
                     value={seller}
                     onChange={(e) => setSeller(e.target.value)}
                   />
@@ -185,13 +193,16 @@ const NewProduct = () => {
                   <div className="custom-file">
                     <input
                       type="file"
-                      name="product_images"
+                      name="product_images font-weight-bold"
                       className="custom-file-input"
                       id="customFile"
                       onChange={onChange}
                       multiple
                     />
-                    <label className="custom-file-label" htmlFor="customFile">
+                    <label
+                      className="custom-file-label font-weight-bold"
+                      htmlFor="customFile"
+                    >
                       Choose Images
                     </label>
                   </div>

@@ -143,7 +143,7 @@ const ProductsDetails = () => {
             </div>
 
             <div className="col-12 col-lg-5 mt-5">
-              <h3>{product.name}</h3>
+              <h3 style={{ fontWeight: "bold" }}>{product.name}</h3>
               <p id="product_id">Product # {product._id}</p>
 
               <hr />
@@ -159,8 +159,8 @@ const ProductsDetails = () => {
               <hr />
 
               <p id="product_price">${product.price}</p>
-              <div className="stockCounter d-inline">
-                <span className="btn btn-danger minus" onClick={decreaseQty}>
+              <div className="stockCounter d-flex">
+                <span className="btn minus" onClick={decreaseQty}>
                   -
                 </span>
 
@@ -168,17 +168,18 @@ const ProductsDetails = () => {
                   type="number"
                   className="form-control count d-inline"
                   value={quantity}
+                  style={{ fontWeight: "bold" }}
                   readOnly
                 />
 
-                <span className="btn btn-primary plus" onClick={increaseQty}>
+                <span className="btn  plus" onClick={increaseQty}>
                   +
                 </span>
               </div>
               <button
                 type="button"
                 id="cart_btn"
-                className="btn btn-primary d-inline ml-4"
+                className="btn btn-primary d-inline "
                 onClick={addToCart}
                 disabled={product.stock === 0}
               >

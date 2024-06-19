@@ -19,7 +19,7 @@ const Headers = () => {
   };
   return (
     <Fragment>
-      <nav className="d-flex justify-content-around align-items-center ">
+      <nav className="d-flex justify-content-around align-items-center sticky-top">
         <div className="navbar-brand">
           <Link to="/">
             <img

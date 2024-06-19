@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const CheckOutSteps = ({ shipping, confirmOrder, confirmPayment }) => {
   return (
-    <div className="checkout-progress d-flex justify-content-center mt-5">
+    <div className="checkout-progress mt-5">
       {shipping ? (
-        <Link to="shipping" className="float-right">
+        <Link to="/shipping">
           <div className="triangle2-active"></div>
           <div className="step active-step">Shipping</div>
           <div className="triangle-active"></div>
@@ -19,7 +19,7 @@ const CheckOutSteps = ({ shipping, confirmOrder, confirmPayment }) => {
       )}
 
       {confirmOrder ? (
-        <Link to="/order/confirm" className="float-right">
+        <Link to="/order/confirm">
           <div className="triangle2-active"></div>
           <div className="step active-step">Confirm Order</div>
           <div className="triangle-active"></div>
@@ -33,7 +33,7 @@ const CheckOutSteps = ({ shipping, confirmOrder, confirmPayment }) => {
       )}
 
       {confirmPayment ? (
-        <Link to="/payment" className="float-right">
+        <Link to="/payment">
           <div className="triangle2-active"></div>
           <div className="step active-step">Payment</div>
           <div className="triangle-active"></div>

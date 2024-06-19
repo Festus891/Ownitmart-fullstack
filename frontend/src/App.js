@@ -51,6 +51,7 @@ import Service from "./components/pages/Service";
 import Contact from "./components/pages/Contact";
 import ProductMapping from "./components/product/ProductMapping";
 import CategoryPage from "./components/product/CategoryPage";
+import { apiUrl } from "./actions/baseUrl";
 
 function App() {
   const { user, loading } = useSelector((state) => state.auth);
@@ -59,7 +60,7 @@ function App() {
     store.dispatch(loadUser());
 
     async function getStripeApiKey() {
-      const { data } = await axios.get("/api/v1/stripeapi");
+      const { data } = await axios.get(`${apiUrl}/api/v1/stripeapi`);
       setStripeApiKey(data.stripeApiKey);
     }
 
