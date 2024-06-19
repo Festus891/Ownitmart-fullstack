@@ -6,11 +6,10 @@ body {
   /* font-family: "kaushan Script", cursive; */
   font-weight: bold;
   /* font-family: "Amazon Ember"; */
-  width: 100%;
-  height: 100%;
   margin: 0px;
   padding: 0px;
-  background-image: url("/public/images/appback.jpg");
+  /* background-image: url("/public/images/appback.jpg"); */
+  background-color: grey;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -742,7 +741,7 @@ footer .links-heading {
 
 .user-info h4 {
   font-weight: 800;
-  color: grey;
+  color: #fa9c23;
   margin-top: 2rem;
 }
 
@@ -753,6 +752,7 @@ footer .links-heading {
 #edit_profile {
   background-color: #fa9c23;
   border-color: #fa9c23;
+  font-weight: bold;
 }
 
 /* Confirm Order */

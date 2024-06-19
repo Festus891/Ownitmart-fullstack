@@ -15,8 +15,19 @@ const Profile = () => {
       ) : (
         <Fragment>
           <MetaData title={"Your Profile"} />
-          <h2 className="mt-5 ml-5">My Profile</h2>
-          <div className="row justify-content-around mt-5 user-info">
+          <h2
+            className="mt-5 ml-5 text-center"
+            style={{ fontWeight: "bold", color: "white" }}
+          >
+            My Profile
+          </h2>
+          <div
+            className="row justify-content-around m-auto p-5 user-info "
+            style={{
+              backgroundColor: "rgba(33, 37, 41, 1)",
+              color: "#fff",
+            }}
+          >
             {user &&
               user.avatar && ( // Check if user and user.avatar are defined
                 <div className="col-12 col-md-3">
@@ -54,6 +65,7 @@ const Profile = () => {
               )}
 
               <Link
+                id="edit_profile"
                 to="/password/update"
                 className="btn btn-primary btn-block mt-3"
               >
