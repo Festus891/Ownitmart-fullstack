@@ -22,7 +22,7 @@ const Footer = () => {
                   <form className="d-flex">
                     <input
                       type="email"
-                      class="form-control me-2"
+                      className="form-control me-2"
                       placeholder="Enter your E-mail address"
                     />
                     <button

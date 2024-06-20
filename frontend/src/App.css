@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
-/* html,
+html,
 body {
   font-family: "Quicksand", sans-serif;
   font-family: "kaushan Script", cursive;
@@ -9,12 +9,12 @@ body {
   margin: 0px;
   padding: 0px;
   background-image: url("/public/images/appback.jpg");
-  background-color: grey;
+  /* background-color: grey; */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-} */
+}
 
 :root {
   --green: #27ae60;

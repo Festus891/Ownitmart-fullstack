@@ -164,7 +164,7 @@ const Headers = () => {
                       className=" dropdown-item d-flex"
                     >
                       <i
-                        class="fas fa-heart pt-1"
+                        className="fas fa-heart pt-1"
                         style={{ color: "black" }}
                       ></i>
                       <span id="cart" className="ml-2">
@@ -176,7 +176,7 @@ const Headers = () => {
                       style={{ textDecoration: "none", fontWeight: "bold" }}
                       className=" dropdown-item d-flex"
                     >
-                      <i class="fas fa-box"></i>
+                      <i className="fas fa-box"></i>
                       <span id="cart" className="ml-2 ">
                         Orders
                       </span>

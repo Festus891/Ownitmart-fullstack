@@ -1,8 +1,8 @@
 // Redux setup
-import { legacy_createStore as createStore } from "redux";
+import { compose, legacy_createStore as createStore } from "redux";
 import { combineReducers, applyMiddleware } from "redux";
 import { thunk } from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
+// import { composeWithDevTools } from "redux-devtools-extension";
 import {
   productReducer,
   productDetailsReducer,
@@ -67,7 +67,7 @@ const middleware = [thunk];
 const store = createStore(
   reducer,
   initialState,
-  composeWithDevTools(applyMiddleware(...middleware))
+  compose(applyMiddleware(...middleware))
 );
 
 export default store;
