@@ -8,8 +8,8 @@ body {
   font-family: "Amazon Ember";
   margin: 0px;
   padding: 0px;
-  background-image: url("/public/images/appback.jpg");
-  /* background-color: grey; */
+  /* background-image: url("/public/images/appback.jpg"); */
+  background-color: #fff;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
