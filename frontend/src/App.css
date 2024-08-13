@@ -130,7 +130,7 @@ nav .nav-profile Link:hover {
 
 /* Home page */
 .home_container {
-  background-image: url("/public/images/goldblack.jpg");
+  background-image: url("/public/images/common-bg.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -138,7 +138,17 @@ nav .nav-profile Link:hover {
   /* background-color: rgba(33, 37, 41, 1); */
   color: #fff;
   align-content: center;
-  padding: 5px;
+  /* padding: 5px; */
+}
+
+.home_container .slide_product_name {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .home_container .slide_product_name {
+    font-size: 0.9rem;
+  }
 }
 
 /* down arrow in home page  */
@@ -167,6 +177,25 @@ nav .nav-profile Link:hover {
 .home_container .home_second_col {
   background-color: rgba(248, 249, 250, 1);
 }
+
+.carousel-indicators {
+  position: absolute;
+  bottom: -30px; /* Adjust this value to move indicators further down */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin-right: 15%;
+  margin-left: 15%;
+  list-style: none;
+}
+
+.carousel-inner {
+  padding-bottom: 50px;
+}
+
 .carousel-indicators li {
   width: 10px;
   height: 10px;
@@ -178,12 +207,17 @@ nav .nav-profile Link:hover {
   background-color: #fa9c23; /* Color of the active dot */
 }
 
-.row-products-container {
-  overflow-x: auto;
+.row-products {
+  overflow: scroll;
+  scroll-snap-type: x mandatory;
   white-space: nowrap;
   padding: 10px;
   position: relative;
-  margin: 0 50px; /* Add margin to make space for the buttons */
+  /* margin: 0 50px;  */
+}
+
+.row-products img {
+  scroll-snap-align: center;
 }
 .scroll-button {
   position: absolute;
@@ -967,5 +1001,9 @@ ul.CTAs a {
   .table-responsive table {
     width: 100%;
     min-width: 700px; /* Adjust this value based on your table content */
+  }
+
+  .slide_product_name {
+    font-size: 0.2rem;
   }
 }
