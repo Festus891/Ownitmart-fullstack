@@ -35,8 +35,8 @@ const ForgotPassword = () => {
   return (
     <Fragment>
       <MetaData title={"Forgot password"} />
-      <div className="row wrapper">
-        <div className="col-10 col-lg-5">
+      <div className="wrapper-container">
+        <div className="container">
           <form className="shadow-lg" onSubmit={submitHandler}>
             <h1 className="mb-3">Forgot Password</h1>
             <div className="form-group">
@@ -45,6 +45,7 @@ const ForgotPassword = () => {
                 type="email"
                 id="email_field"
                 className="form-control"
+                required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />

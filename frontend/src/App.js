@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ScrollToTop from "./components/ScrollToTop";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Headers, Footer, Home } from "./components/imports";
@@ -71,6 +72,7 @@ function App() {
       <div className="App">
         <Headers />
         <HeaderTwo />
+        <ScrollToTop />
 
         <div className="container-fluid">
           <Routes>
