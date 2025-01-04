@@ -4,7 +4,7 @@ import categoryData from "./categoryData";
 
 const CategoryProduct = () => {
   return (
-    <div className="container-fluid home-row-container">
+    <div className="container-fluid home-row-container ">
       <div
         className="container-fluid d-flex justify-content-between align-items-center"
         style={{

@@ -6,6 +6,8 @@ import HomeSlider from "./product/HomeSlider";
 import RowMapping from "./product/RowMapping";
 import CategoryProduct from "./product/CategoryProduct";
 import HomeFeatures from "./product/HomeFeatures";
+import HomeBanner from "./product/HomeBanner";
+import HomeBannerTwo from "./product/HomeBannerTwo";
 
 const Home = ({ product }) => {
   return (
@@ -13,9 +15,10 @@ const Home = ({ product }) => {
       <div className="container-fluid home_container p-4">
         <HomeSlider />
       </div>
-
       <ProductMapping title={"Best Selling Products"} />
+      <HomeBanner />
       <RowMapping title={"Flash Sale"} />
+      <HomeBannerTwo />
       <CategoryProduct />
       <HomeFeatures />
     </Fragment>
